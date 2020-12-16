@@ -61,8 +61,6 @@ Temperature is in kelvin, pressure in hPa, humidity in percentage, windspeed in 
   "description": "scattered clouds"
   "temp": 280.23,
   "feels_like": 276.05,
-  "temp_min": 278.71,
-  "temp_max": 281.48,
   "dew_point": 272.88,
   "uvi": 0.54,
   "pressure": 1020,
