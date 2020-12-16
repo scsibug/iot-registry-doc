@@ -49,7 +49,7 @@ The `subject` is the location of the weather data, and will be the US ZIP code.
 
 ### Payload Example
 
-Temperature is in kelvin, pressure in KPa, humidity in percentage, windspeed in meters/sec, visibility in meters, sunrise/sunset is in seconds since UNIX epoch, rain and snow volume in mm.
+Temperature is in kelvin, pressure in hPa, humidity in percentage, windspeed in meters/sec, visibility in meters, sunrise/sunset is in seconds since UNIX epoch, rain and snow volume in mm.
 
 ```
 {
