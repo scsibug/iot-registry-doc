@@ -49,7 +49,7 @@ The `subject` is the location of the weather data, and will be the US ZIP code.
 
 ### Payload Example
 
-Temperature is in kelvin, pressure in hPa, humidity in percentage, windspeed in meters/sec, visibility in meters, sunrise/sunset is in seconds since UNIX epoch, rain and snow volume in mm.
+Temperature is in kelvin, pressure in hPa, humidity in percentage, windspeed in meters/sec, visibility in meters, dt/sunrise/sunset is in seconds since UNIX epoch, rain and snow volume in mm.
 
 ```
 {
@@ -58,14 +58,15 @@ Temperature is in kelvin, pressure in hPa, humidity in percentage, windspeed in 
     "lat": 32.91,
     "zip": "10001"
   },
-  "description": "scattered clouds"
+  "dt": 1608163984,
+  "description": ["scattered clouds"],
   "temp": 280.23,
   "feels_like": 276.05,
-  "dew_point": 272.88,
+  "dew_point": 279.0,
   "uvi": 0.54,
   "pressure": 1020,
-  "humidity": 60,
-  "clouds": 40,
+  "humidity": 0.60,
+  "clouds": 0.40,
   "windspeed": 3.1,
   "winddeg": 0,
   "visibility": 10000,
@@ -75,3 +76,9 @@ Temperature is in kelvin, pressure in hPa, humidity in percentage, windspeed in 
   "snow": { "snow.1h": 0, "snow.3h": 0 }
 }
 ```
+
+## InfluxDB Measurements
+
+When sending to InfluxDB, the measurement is `weather`.  The tag set should include `zipcode`.
+
+Field names will be sent essentially unchanged, with the exception of `rain` and `snow` fields.  Those simply have their contents (`rain.1h`) sent as fields.
